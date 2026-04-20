@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores del diseño de la clínica */
+  --color-brand-cream: #FDF8F7;
+  --color-brand-pink: #E8D5D4;
+  --color-brand-text: #2D2D2D;
+  
+  /* Tipografías */
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
