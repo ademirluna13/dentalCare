@@ -10,8 +10,60 @@
   --color-brand-neutral: #FAF9F9;   /* Fondo grisáceo muy claro */
   --color-brand-dark: #4A3737;      /* Café oscuro de los botones Primary */
   /* Definiciones de fuentes */
-  --font-serif: "Playfair Display", serif; /* Elegante */
-  --font-sans: "Inter", sans-serif;          /* Limpia */
+ --font-serif: "Noto Serif", serif;
+  --font-sans: "Manrope", sans-serif;        /* Limpia */
+}
+
+body {
+  @apply bg-brand-neutral overflow-x-hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed; /* Para que no se mueva al hacer scroll */
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.03; /* Si no lo ves, súbelo a 0.05 para probar */
+  pointer-events: none;
+  z-index: 9999; /* Siempre arriba de todo */
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(150%) brightness(100%);
+}
+
+/* Textura de grano sutil */
+.bg-grain {
+  position: relative;
+}
+
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03; /* Casi invisible, pero hace la diferencia */
+  pointer-events: none;
+  z-index: 50;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(150%) brightness(100%);
+}
+
+/* Marca de agua para fondos */
+.watermark-text {
+  @apply font-serif italic text-brand-dark/[0.02] pointer-events-none select-none;
+  font-size: 25vw;
+  line-height: 1;
+}
+
+/* Animación para los blurs */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 10s ease-in-out infinite;
 }
 
 @keyframes marquee {

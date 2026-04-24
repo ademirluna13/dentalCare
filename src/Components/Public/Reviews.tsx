@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const reviews = [
   { text: "La experiencia dental más serena que he tenido. Es una verdadera forma de arte.", author: "Lucía M." },

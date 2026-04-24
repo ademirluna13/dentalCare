@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { SparklesIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const HeroSection = () => {
